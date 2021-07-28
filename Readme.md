@@ -26,11 +26,11 @@
 2. The application should have an API endpoint that accepts a string of comma separated
 points for example “(2,3), (1,1), (5, 4), ...” and calculates the closest points. It then stores them
 in a table with the following details: 
--The string of points submitted
+-The string of points submitted [Done]
 -The result of the computation: the closest points pair [Done]
 3. Write unit tests to validate your expectations
 4. Host the application on Heroku (or a different service of choice that will be publicly
-available)
-5. Host your code on GitHub and share repository
+available)[Done]
+5. Host your code on GitHub and share repository[Done]
 6. Also share the API of the application and any credentials that might be needed alongside a
 summary of how your application works
