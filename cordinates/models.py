@@ -1,13 +1,7 @@
 from django.db import models
 from django.db.models.base import Model
 
-# Create your models here.
-
-
-
-
-
-    
+# Create your models here.    
 class Cordinate(models.Model):
     class Meta:
         db_table = 'Cordinate'
