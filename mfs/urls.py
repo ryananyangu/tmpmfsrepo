@@ -19,7 +19,7 @@ from django.urls import path
 from cordinates.views import CordinatesView
 
 urlpatterns = [
-    path('admin', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('cordinates/check',CordinatesView.as_view()),
     path('api-auth/', include('rest_framework.urls')),
 ]
