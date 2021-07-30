@@ -38,15 +38,24 @@ summary of how your application works
 
 ```
 coverage run --source='.' manage.py test cordinates
+coverage report
 
-Name                                                                                                         Stmts   Miss  Cover
---------------------------------------------------------------------------------------------------------------------------------
-cordinates/__init__.py                                                                                           0      0   100%
-cordinates/admin.py                                                                                              3      0   100%
-cordinates/apps.py                                                                                               4      0   100%
-cordinates/migrations/0001_initial.py                                                                            7      0   100%
-cordinates/migrations/__init__.py                                                                                0      0   100%
-cordinates/models.py                                                                                            15      0   100%
-cordinates/tests.py                                                                                             23      0   100%
-cordinates/views.py                                                                                             72      1    99%
+Name                                    Stmts   Miss  Cover
+-----------------------------------------------------------
+cordinates/__init__.py                      0      0   100%
+cordinates/admin.py                         3      0   100%
+cordinates/apps.py                          4      0   100%
+cordinates/migrations/0001_initial.py       7      0   100%
+cordinates/migrations/__init__.py           0      0   100%
+cordinates/models.py                       15      0   100%
+cordinates/tests.py                        23      0   100%
+cordinates/views.py                        72      1    99%
+manage.py                                  12      2    83%
+mfs/__init__.py                             0      0   100%
+mfs/asgi.py                                 4      4     0%
+mfs/settings.py                            36      1    97%
+mfs/urls.py                                 8      0   100%
+mfs/wsgi.py                                 4      4     0%
+-----------------------------------------------------------
+TOTAL                                     188     12    94%                                                                                          
 ```
