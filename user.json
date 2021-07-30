@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$260000$fBTUvybGJyc1RTpgwAZhbB$6kLhk0XUFJnXHbeB2QfK9aAsGVt1OlB+5xurV7s5Ezg=",
-    "last_login": null,
+    "last_login": "2021-07-30T10:24:23.350Z",
     "is_superuser": true,
     "username": "rashiruma",
     "first_name": "",
