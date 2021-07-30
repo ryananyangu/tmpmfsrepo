@@ -25,8 +25,8 @@
 - [X] The application should have an API endpoint that accepts a string of comma separated
 points for example “(2,3), (1,1), (5, 4), ...” and calculates the closest points. It then stores them
 in a table with the following details: 
--The string of points submitted
--The result of the computation: the closest points pair
+- The string of points submitted
+- The result of the computation: the closest points pair
 - [X] Write unit tests to validate your expectations
 - [X] Host the application on Heroku (or a different service of choice that will be publicly
 available)
@@ -130,3 +130,93 @@ mfs/wsgi.py                                 4      4     0%
 -----------------------------------------------------------
 TOTAL                                     188     12    94%                                                                                          
 ```
+
+## APIs Implementation and Examples 
+### Login API
+[login link](https://ashiruma-mfs.herokuapp.com/api-token-auth/)
+
+Sample request via curl
+```bash
+curl -X POST \
+  https://ashiruma-mfs.herokuapp.com/api-token-auth/ \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -d '{
+        "username": "rashiruma",
+        "password": "XXXXXXXXX"
+      }'
+```
+
+Sample response
+```json
+{
+    "token": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+}
+```
+
+### Verify Token API
+[token verification link](https://ashiruma-mfs.herokuapp.com/api-token-verify/)
+
+Sample request
+```bash
+curl -X POST \
+  https://ashiruma-mfs.herokuapp.com/api-token-refresh/ \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -d '{
+        "token": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+      }'
+```
+
+Sample response
+```json
+{
+    "token": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+}
+```
+
+
+### Refresh token API 
+[token refresh link](https://ashiruma-mfs.herokuapp.com/api-token-refresh/)
+
+Sample request
+```bash
+curl -X POST \
+  https://ashiruma-mfs.herokuapp.com/api-token-refresh/ \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -d '{
+        "token": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+      }'
+```
+
+Sample response with new token
+```json
+{
+    "token": "YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY"
+}
+```
+
+### Cordinates check API
+[points/ cordinates check link](https://ashiruma-mfs.herokuapp.com/cordinates/check/)
+
+Sample request via curl
+```bash
+curl -X POST \
+  https://ashiruma-mfs.herokuapp.com/cordinates/check/ \
+  -H 'authorization: Bearer XXXXXXXXXXXXXXXXXXXXX' \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -d '"(1,2),(3,4),(14,2)"'
+```
+
+Sample response
+Cordinate pairs that have the shortest distance with the distance value
+```json
+{
+    "cordinates": "(1, 2),(3, 4)|(3, 4),(1, 2)",
+    "distance": 2.8284271247461903
+}
+```
+### Admin Portal url 
+[Administration portal link](https://ashiruma-mfs.herokuapp.com/admin/)
