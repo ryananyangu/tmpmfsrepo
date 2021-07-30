@@ -1,8 +1,8 @@
-# NEAREST POINTS
+# NEAREST POINTS/CORDINATES
 
 ## Assumptions 
-- First point in list of tuples in x cordinate
-- Second point in the list of tuples in y cordinate
+- First point in list of tuples is x cordinate
+- Second point in the list of tuples is y cordinate
 - Uploaded points are grouped batchwise (each api request corresponds to a unique batch)
 - Shortest distance considers bidirrectional movement repetion of some points in different order
 
