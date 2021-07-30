@@ -37,6 +37,9 @@ summary of how your application works
 
 
 ```
+python3 -m venv env
+source ../env/bin/activate
+pip install -r requirements.txt
 coverage run --source='.' manage.py test cordinates
 coverage report
 
