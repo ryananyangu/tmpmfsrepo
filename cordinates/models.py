@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models.base import Model
+from django.contrib.auth.models import User
 
 # Create your models here.    
 class Cordinate(models.Model):
@@ -14,5 +14,5 @@ class Cordinate(models.Model):
     distance = models.DecimalField(max_digits=22,decimal_places=20)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
-    created_by = models.CharField(blank=False, null=False, max_length=60)
-    modified_by = models.CharField(blank=False, null=False, max_length=60)
+    created_by = models.ForeignKey(User,on_delete=models.PROTECT, related_name="+")
+    modified_by = models.ForeignKey(User,on_delete=models.PROTECT, related_name="+")

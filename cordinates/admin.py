@@ -1,3 +1,4 @@
 from django.contrib import admin
+from cordinates.models import Cordinate
 
-# Register your models here.
+admin.site.register(Cordinate)

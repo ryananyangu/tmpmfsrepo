@@ -27,12 +27,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("SECRET_KEY")
-
+APPEND_SLASH = False
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG")
 
 ALLOWED_HOSTS = [
     'ashiruma-mfs.herokuapp.com',
+    'localhost',
 ]
 
 
@@ -45,7 +46,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'reset_migrations',
     'cordinates',
     'rest_framework',
 ]
@@ -109,7 +109,7 @@ except Exception as identifier:
     }
 
 DATABASES = {
-    'default':DEFAULT_DB,
+    'default': DEFAULT_DB,
 }
 
 # Password validation
@@ -194,4 +194,42 @@ JWT_AUTH = {
 
     'JWT_AUTH_HEADER_PREFIX': 'Bearer',
 
+}
+
+DJANGO_LOG_LEVEL = DEBUG
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'simple': {
+            'format': '{levelname} | {asctime} | {module} | {process:d} | {thread:d} | {message}',
+            'style': '{',
+        },
+    },
+    'filters': {
+
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'propagate': True,
+        },
+
+    }
 }

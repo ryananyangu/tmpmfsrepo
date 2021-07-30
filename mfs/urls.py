@@ -24,7 +24,7 @@ from rest_framework_jwt.views import verify_jwt_token
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cordinates/check',CordinatesView.as_view()),
+    path('cordinates/check/',CordinatesView.as_view()),
     path('api-token-auth/', obtain_jwt_token),
     path('api-token-verify/', verify_jwt_token),
     path('api-token-refresh/', refresh_jwt_token),
