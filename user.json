@@ -3,16 +3,16 @@
   "model": "auth.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$260000$lmH3lpM8vf3Jhu03fKiL4P$bDUZIwi5JH0kAAaqnZJjfVCl8UJbPkyTJAAigrMMBJY=",
+    "password": "pbkdf2_sha256$260000$fBTUvybGJyc1RTpgwAZhbB$6kLhk0XUFJnXHbeB2QfK9aAsGVt1OlB+5xurV7s5Ezg=",
     "last_login": null,
     "is_superuser": true,
     "username": "rashiruma",
     "first_name": "",
     "last_name": "",
-    "email": "ryananyangu@gmail.com",
+    "email": "admin@rashiruma.tech",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2021-07-28T15:58:53.557Z",
+    "date_joined": "2021-07-30T10:20:15.375Z",
     "groups": [],
     "user_permissions": []
   }
